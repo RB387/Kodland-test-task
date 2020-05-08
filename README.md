@@ -12,5 +12,6 @@ chmod +x configure_db.sh
 
 Then run server with:
 ```
+pipenv lock
 pipenv run python manage.py runserver
 ```
