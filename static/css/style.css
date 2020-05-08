@@ -1,0 +1,128 @@
+body {
+    font-family: "Circe Rounded";
+}
+#logo {
+    height: 2em;
+    display: inline;
+    margin-left: 23px;
+}
+nav {
+    background-color: white;
+    height: 6em;
+}
+.post {
+    border-radius: 5px;
+    border: 2px solid #CDCDCD;
+    padding-left: 22px;
+    padding-right: 22px;
+    height: 100%;
+
+}
+.post.hoverable:hover{
+    box-shadow: 0 0 12px #E2EDF8;
+    border-color: #E2EDF8;
+}
+.preview {
+    width: 100%;
+    object-fit: scale-down;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.image-holder {
+  position: relative;
+  width: 100%; /* The size you want */
+}
+.image-holder:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+
+.image-holder img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img {
+    float:  left;
+    height: 100%;
+    object-fit: fill;
+}
+.title {
+    color: #315AF2;
+    word-wrap: break-word;
+}
+
+.publish-button {
+    font-family: 'Circe Rounded';
+}
+
+.text-input {
+    font-family: 'Circe Rounded';
+    box-sizing: border-box!important;
+    padding-left: 13px!important;
+    border: 2px solid #CDCDCD!important;
+    border-radius: 3px!important;
+}
+
+.file-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file-uploader {
+    padding-top: 12px;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.border {
+    border: 2px solid #CDCDCD!important;
+    border-radius: 3px!important;
+}
+
+.title-input {
+    color: #315AF2;
+}
+
+.text-input:focus {
+  border-bottom: 2px solid #CDCDCD;
+  box-shadow: none!important;
+}

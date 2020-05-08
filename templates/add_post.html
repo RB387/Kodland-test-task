@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="title left-align">Добавить статью</h3>
+            </div>
+        </div>
+        <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {{ form.errors }}
+            <div class="row">
+                <div class="col s8">
+                    {{ form.title }}
+                </div>
+                <div class="col s4">
+                     <button class="btn waves-effect pink lighten-1 publish-button" type="submit" name="action">Опубликовать</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s8">{{ form.text }}</div>
+                <div class="col s4 border flex">
+                    {{ form.image }}
+                    <label for="image-upload" class="title file-uploader">Загрузить изображение</label>
+                    <img class="preview" id="id_image" src="{% static 'images/no_image.svg' %}">
+                </div>
+            </div>
+        </form>
+    </div>
+<script> bind_image_uploader() </script>
+{% endblock content %}
