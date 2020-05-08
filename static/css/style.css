@@ -126,3 +126,10 @@ nav {
   border-bottom: 2px solid #CDCDCD;
   box-shadow: none!important;
 }
+
+.stats div p {
+    color: #CDCDCD;
+}
+.stats div p img {
+    height: 1em;
+}

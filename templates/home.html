@@ -2,103 +2,94 @@
 
 {% block content %}
     {% load static %}
-    <style>
-        .stats div p {
-            color: #CDCDCD;
-        }
-        .stats div p img {
-            height: 1em;
-        }
-    </style>
-<div class="container">
-    <div class="section">
-        <div class="row flex">
-            <div class="col s7">
-                <div class="row valign-wrapper" style="">
-                    <div class="col">
-                        <p style="color: #E9399C;"><b>NEW</b></p>
-                    </div>
-                    <div class="stats">
-                        <div class="col valign-wrapper" style="padding: 4px">
-                            <p><img src="{% static 'images/likes.svg' %}"> 25</p>
-                        </div>
-                        <div class="col valign-wrapper" style="padding: 4px">
-                            <p><img src="{% static 'images/comments.svg' %}" > 25</p>
-                        </div>
-                        <div class="col valign-wrapper" style="padding: 4px">
-                            <p><img src="{% static 'images/seen.svg' %}"> 25</p>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="title">{{ posts.0.title }}</h1>
-                <div class="row">
-                    <div class="col s7">
-                        <p>{{ posts.0.text|slice:200 }}...</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s3">
-                        <a class="waves-effect blue accent-3 btn-large">Читать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s5 valign-wrapper">
-                <img src="{{ posts.0.image.url }}" class="preview">
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="divider" style="margin-bottom: 22px"></div>
     <div class="container">
-    <div class="row flex">
-        <div class="col" style="height: 100%; width: 50%;">
-            <h3 class="title">Другие статьи</h3>
-        </div>
-        <div class="col" style="width: 50%">
-            <div class="right" style="height: 100%;">
-                <div class="valign-wrapper" style="height: 100%;">
-                    <img style="flex-grow: 1; float: right;" src="{% static 'images/filter.svg' %}">
+        <div class="section">
+            <div class="row flex">
+                <div class="col s7">
+                    <div class="row valign-wrapper" style="">
+                        <div class="col">
+                            <p style="color: #E9399C;"><b>NEW</b></p>
+                        </div>
+                        <div class="stats">
+                            <div class="col valign-wrapper" style="padding: 4px">
+                                <p><img src="{% static 'images/likes.svg' %}"> 25</p>
+                            </div>
+                            <div class="col valign-wrapper" style="padding: 4px">
+                                <p><img src="{% static 'images/comments.svg' %}" > 25</p>
+                            </div>
+                            <div class="col valign-wrapper" style="padding: 4px">
+                                <p><img src="{% static 'images/seen.svg' %}"> 25</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="title">{{ posts.0.title }}</h1>
+                    <div class="row">
+                        <div class="col s7">
+                            <p>{{ posts.0.text|slice:200 }}...</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s3">
+                            <a class="waves-effect blue accent-3 btn-large">Читать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s5 valign-wrapper">
+                    <img src="{{ posts.0.image.url }}" class="preview">
                 </div>
             </div>
-
         </div>
     </div>
+        <div class="divider" style="margin-bottom: 22px"></div>
+        <div class="container">
         <div class="row flex">
-            <div class="col s12">
-            {% for post in posts|slice:"1:"  %}
-                {% if forloop.counter0|divisibleby:3 %}
-                    <div class="row flex">
-                {% endif %}
-                <div class="col s4">
-                    <div class="hoverable post center-align">
-                        {% if post %}
-                            <p class="left-align" style="color: #979797;">{{ post.published_date }}</p>
-                            <div class="image-holder">
-                                <img src="{{ post.image.url }}" class="preview">
-                            </div>
-                            <h4 class="title">{{ post.title }}</h4>
-                            <div class="stats">
-                                <div class="col valign-wrapper" style="padding: 4px">
-                                    <p><img src="{% static 'images/likes.svg' %}"> 25</p>
-                                </div>
-                                <div class="col valign-wrapper" style="padding: 4px">
-                                    <p><img src="{% static 'images/comments.svg' %}" > 25</p>
-                                </div>
-                                <div class="col valign-wrapper" style="padding: 4px">
-                                    <p><img src="{% static 'images/seen.svg' %}"> 25</p>
-                                </div>
-                            </div>
-                        {% else %}
-                            <div></div>
-                        {% endif %}
+            <div class="col" style="height: 100%; width: 50%;">
+                <h3 class="title">Другие статьи</h3>
+            </div>
+            <div class="col" style="width: 50%">
+                <div class="right" style="height: 100%;">
+                    <div class="valign-wrapper" style="height: 100%;">
+                        <img style="flex-grow: 1; float: right;" src="{% static 'images/filter.svg' %}">
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-                    </div>
-                {% endif %}
-            {% endfor %}
+
             </div>
         </div>
-    </div>
-
-{% endblock %}
+            <div class="row flex">
+                <div class="col s12">
+                {% for post in posts|slice:"1:"  %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row flex">
+                    {% endif %}
+                    <div class="col s4">
+                        <div class="hoverable post center-align">
+                            {% if post %}
+                                <p class="left-align" style="color: #979797;">{{ post.published_date }}</p>
+                                <div class="image-holder">
+                                    <img src="{{ post.image.url }}" class="preview">
+                                </div>
+                                <h4 class="title">{{ post.title }}</h4>
+                                <div class="stats">
+                                    <div class="col valign-wrapper" style="padding: 4px">
+                                        <p><img src="{% static 'images/likes.svg' %}"> 25</p>
+                                    </div>
+                                    <div class="col valign-wrapper" style="padding: 4px">
+                                        <p><img src="{% static 'images/comments.svg' %}" > 25</p>
+                                    </div>
+                                    <div class="col valign-wrapper" style="padding: 4px">
+                                        <p><img src="{% static 'images/seen.svg' %}"> 25</p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock content%}
