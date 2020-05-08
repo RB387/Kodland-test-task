@@ -77,7 +77,17 @@
                                 <img src="{{ post.image.url }}" class="preview">
                             </div>
                             <h4 class="title">{{ post.title }}</h4>
-                            <p class="truncate"> {{ post.text }}</p>
+                            <div class="stats">
+                                <div class="col valign-wrapper" style="padding: 4px">
+                                    <p><img src="{% static 'images/likes.svg' %}"> 25</p>
+                                </div>
+                                <div class="col valign-wrapper" style="padding: 4px">
+                                    <p><img src="{% static 'images/comments.svg' %}" > 25</p>
+                                </div>
+                                <div class="col valign-wrapper" style="padding: 4px">
+                                    <p><img src="{% static 'images/seen.svg' %}"> 25</p>
+                                </div>
+                            </div>
                         {% else %}
                             <div></div>
                         {% endif %}
